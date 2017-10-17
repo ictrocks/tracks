@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+
+<marquee behavior="scroll" direction="left">
+    
+    <li><span style=color:lightseagreen>TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES</span> *** <span style=color:coral>COLLEGE OF ENGINEERING</span> ***<span style=color:limegreen> ELECTRONICS ENGINEERING</span> ***<span style=color:magenta> INFORMATION AND COMPUTING TECHNOLOGY</span></li>
+</marquee>
+    
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <noscript>
+    <META HTTP-EQUIV="Refresh" CONTENT="0;URL=protected.html">
+  </noscript>
+  <script type="text/javascript" src="pvBackend.js">
+  </script>
+ 
+  
+</head>
+    
+<div class="container">
+    <div class="page-header">
+		<div class="header-head">
+            <h3>PV System Inputs</h3>
+			<div class="help">
+				<img href="#" src="assets/images/help.png" onclick="document.getElementById('helpme').style.display='block'"></img>
+				<div class="info">
+					<img href="#" src="assets/images/info.png" onclick="document.getElementById('aboutus').style.display='block'"></img>
+				</div>
+			</div>
+
+		</div>
+
+    </div>
+
+        <!----------Header break----------->
+     <!----------Header break----------->
+    <!-- Button to open the modal -->
+<button class="_button" onclick="document.getElementById('id01').style.display='block'">Enter Appliances and Ratings</button>
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container_m">
+	
+		<!-- DC appliances -->
+        <table class="table table-bordered" background-color:aqua; name="dctable" id = "dctable">
+            <thead class="thead">
+                <tr>
+                    <th>DC Appliance</th>
+					<th>Quantity</th>
+                    <th>Power per Item (W) </th>
+					<th>Hours of Use (h) </th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+            <tr>
+                <td><input class="form-control" name="dc1" id="dc1" type="text" class="form-control"></td>
+                <td><input class="form-control" name="dc12" id="dc12" type="text" class="form-control" ></td>
+				<td><input class="form-control" name="dc13" id="dc13" type="text" class="form-control"></td>
+				<td><input class="form-control" name="dc14" id="dc14" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+      
+				<td><input class="form-control" name="dc2" id="dc2" type="text" class="form-control" ></td>
+				<td><input class="form-control" name="dc21" id="dc21" type="text" class="form-control"></td>
+				<td><input class="form-control" name="dc22" id="dc22" type="text" class="form-control"></td>
+				<td><input class="form-control" name="dc23" id="dc23" type="text" class="form-control"></td>
+            </tr>
+            </tbody>
+        </table>
+		
+		
+            <button type="button" onclick="add_dc()" class="addbtn">Add more appliances</button>
+			
+			<script>
+			
+				function add_dc() {
+						dcTab = document.getElementById("dctable");
+					    var row = dcTab.insertRow(dcTab.rows.length);
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						var cell4 = row.insertCell(3);
+						
+						
+						
+						var field1 = document.createElement("input");
+						field1.setAttribute("class","form-control");
+						field1.setAttribute("type","text"); 
+						
+						var field2 = document.createElement("input");
+						field2.setAttribute("class","form-control");
+						field2.setAttribute("type","text"); 
+						
+						var field3 = document.createElement("input");
+						field3.setAttribute("class","form-control");
+						field3.setAttribute("type","text"); 
+						
+						var field4 = document.createElement("input");
+						field4.setAttribute("class","form-control");
+						field4.setAttribute("type","text"); 
+						
+						cell1.appendChild(field1);
+						cell2.appendChild(field2);
+						cell3.appendChild(field3);
+						cell4.appendChild(field4);
+					
+				}
+			</script>
+			
+		<!-- AC appliances -->
+
+        <table class="table table-bordered" background-color:aqua; name="actable" id = "actable">
+            <thead class="thead">
+                <tr>
+                    <th>AC Appliance</th>
+					<th>Quantity</th>
+                    <th>Power per Item (W) </th>
+					<th>Hours of Use (h) </th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+            <tr>
+                <td><input class="form-control" name="ac1" id="ac1" type="text" class="form-control" ></td>
+                <td><input class="form-control" name="ac12" id="ac12" type="text" class="form-control"></td>
+				<td><input class="form-control" name="ac13" id="ac13" type="text" class="form-control" ></td>
+				<td><input class="form-control" name="ac14" id="ac14" type="text" class="form-control" ></td>
+            </tr>
+            <tr>
+      
+				<td><input class="form-control" name="ac2" id="ac2" type="text" class="form-control" ></td>
+				<td><input class="form-control" name="ac21" id="ac21" type="text" class="form-control" ></td>
+				<td><input class="form-control" name="ac22" id="ac22" type="text" class="form-control" ></td>
+				<td><input class="form-control" name="ac23" id="ac23" type="text" class="form-control" ></td>
+            </tr>
+            </tbody>
+        </table>
+		
+		
+            <button type="button" onclick="add_ac()" class="addbtn">Add more appliances</button>
+			<script>
+			
+				function add_ac() {
+						acTab = document.getElementById("actable");
+					    var row = acTab.insertRow(acTab.rows.length);
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						var cell4 = row.insertCell(3);
+						
+						var field1 = document.createElement("input");
+						field1.setAttribute("class","form-control");
+						field1.setAttribute("type","text"); 
+						
+						var field2 = document.createElement("input");
+						field2.setAttribute("class","form-control");
+						field2.setAttribute("type","text"); 
+						field2.setAttribute("size", "50%");
+						
+						var field3 = document.createElement("input");
+						field3.setAttribute("class","form-control");
+						field3.setAttribute("type","text"); 
+						
+						var field4 = document.createElement("input");
+						field4.setAttribute("class","form-control");
+						field4.setAttribute("type","text"); 
+						
+						
+						cell1.appendChild(field1);
+						cell2.appendChild(field2);
+						cell3.appendChild(field3);
+						cell4.appendChild(field4);
+					
+				}
+			</script>
+		
+		
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <!-- <button type="submit" class="submitbtn" onclick="lala()">Submit</button> -->
+		
+		<button type="button" onclick= "lala()" class = "submitbtn">Submit</button>
+		<script>
+			function lala() {
+				var sum_pow_dc = 0;
+				var sum_energy_dc = 0;
+				var sum_pow_ac = 0;
+				var sum_energy_ac = 0;
+				
+				dcTab = document.getElementById("dctable").rows;
+				acTab = document.getElementById("actable").rows;
+				
+				for(i = 1; i < dcTab.length; i++){
+				
+					sum_pow_dc += parseFloat(parseFloat(dcTab[i].cells[1].children[0].value)|| 0) *  parseFloat(parseFloat(dcTab[i].cells[2].children[0].value)|| 0);
+					sum_energy_dc +=  parseFloat(parseFloat(dcTab[i].cells[1].children[0].value)|| 0) *  parseFloat(parseFloat(dcTab[i].cells[2].children[0].value)|| 0) * parseFloat(parseFloat(dcTab[i].cells[3].children[0].value)|| 0);
+				}
+				
+				for(i = 1; i < acTab.length; i++){
+				
+					sum_pow_ac +=  parseFloat(parseFloat(acTab[i].cells[1].children[0].value)|| 0) * parseFloat(parseFloat(acTab[i].cells[2].children[0].value)|| 0);
+					sum_energy_ac += parseFloat(parseFloat(acTab[i].cells[1].children[0].value)|| 0) * parseFloat(parseFloat(acTab[i].cells[2].children[0].value)|| 0)* parseFloat(parseFloat(acTab[i].cells[3].children[0].value)|| 0);
+				}
+				
+				
+				document.getElementById("dcp").value = sum_pow_dc;
+				document.getElementById("dce").value = sum_energy_dc;
+				document.getElementById("acp").value = sum_pow_ac;
+				document.getElementById("ace").value = sum_energy_ac;
+				
+				document.getElementById('id01').style.display='none'
+			}
+		</script>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="col-xs-6 col-md-4">
+        <div id="helpme" class="modal">
+			<span onclick="document.getElementById('helpme').style.display='none'" class="close" title="Close Modal">&times;</span>
+				<form class="modal-content animate" style="background: transparent; width: 50%">
+					    <div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">How to USE:</h3>
+							</div>
+							<div class="panel-body">
+							<iframe src="manual.html" width="100%" height="420px" >
+							</iframe>
+							<button type = "button" onclick="load_data()">Load Example</button>
+							<script>
+							
+								function load_data() {
+								
+									document.getElementById("dc1").value = "Lamp";
+									document.getElementById("dc12").value = 4;
+									document.getElementById("dc13").value = 25;
+									document.getElementById("dc14").value = 3;
+									
+									
+									document.getElementById("ac1").value = "TV";
+									document.getElementById("ac12").value = 1;
+									document.getElementById("ac13").value = 100;
+									document.getElementById("ac14").value = 2;
+									
+									
+									document.getElementById("ac2").value = "Computer";
+									document.getElementById("ac21").value = 1;
+									document.getElementById("ac22").value = 100;
+									document.getElementById("ac23").value = 1;
+									
+									document.getElementById("dcp").value = 100;
+									document.getElementById("dce").value = 300;
+									document.getElementById("acp").value = 200;
+									document.getElementById("ace").value = 300;
+									
+									document.getElementById("sh").value = 4.5;
+									document.getElementById("doa").value = 2;
+									
+									document.getElementById("bat_cap").value = 21;
+									document.getElementById("bat_v").value = 12;
+									document.getElementById("bat_dod").value = 0.6;
+									
+									document.getElementById("cc_v").value = 24;
+									document.getElementById("ce").value = 0.85;
+									
+									document.getElementById("pv_vmp").value = 16;
+									document.getElementById("pv_imp").value = 6.25;
+									document.getElementById("pv_isc").value = 7;
+									document.getElementById("pv_voc").value = 20;
+									document.getElementById("pvp").value = 100;
+									
+									document.getElementById("ie").value = 0.9;
+									
+									document.getElementById('helpme').style.display='none'
+									
+								
+								}
+							</script>
+							
+							
+							</div>
+						</div>
+				</form>
+		</div>
+            
+            </div>
+
+			
+<div class="col-xs-6 col-md-4">
+        <div id="helpmeout" class="modal">
+			<span onclick="document.getElementById('helpmeout').style.display='none'" class="close" title="Close Modal">&times;</span>
+				<form class="modal-content animate" style="background: transparent; width: 50%">
+					    <div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">How to USE:</h3>
+							</div>
+							<div class="panel-body">
+							<iframe src="manualout.html" width="100%" height="420px" >
+							</iframe>
+							<button type ="button" onclick="document.getElementById('helpmeout').style.display='none'">Close</button>
+							</div>
+						</div>
+				</form>
+		</div>
+            
+            </div>
+
+<!----------Header break----------->    
+<div class="container-1">
+    <table class="table table-bordered" background-color:aqua;>
+        <thead class="thead">
+            <tr>
+                <th>Load Demand</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+            <tbody class="tbody">
+            <tr>
+                <td>Total DC Power Consumption (W)</td>
+        
+                <td><input class="form-control" name="dcp" id="dcp" type="text" class="form-control" placeholder="Data 1"></td>
+            </tr>
+            <tr>
+      
+            <td>Total DC Energy Demand (Wh)</td>
+            <td><input class="form-control" name="dce" id="dce" type="text" class="form-control" placeholder="Data 2"></td>
+    
+            </tr>
+            <tr>
+                <td>Total AC Power Consumption (W)</td>
+                <td><input class="form-control" name="acp" id="acp" type="text" class="form-control" placeholder="Data 3"></td>
+            </tr>
+            <tr>
+            <td>Total AC Energy Demand (Wh)</td>
+            <td><input class="form-control" name="ace" id="ace" type="text" class="form-control" placeholder="Data 4"></td>
+            </tr>
+			<tr>
+			<td> Days of Autonomy </td>
+			<td><input class="form-control" name="doa" id="doa" type="text" class="form-control" placeholder="Data 5"></td>
+			</tr>
+            </tbody>
+    </table>
+        <div>
+<!--Table 2-->
+<table class="table table-bordered table-secondary" background-color:aqua;>  
+   <thead class="thead">
+                <tr>
+                    <th>For Charge Controller</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr>
+                    <td>Operating Voltage</td>
+                    <td><input class="form-control" name="cc_v" id="cc_v" type="text" class="form-control" placeholder="Data 14"></td>
+                </tr>
+				<tr>
+					<td>Efficiency</td>
+					<td><input class="form-control" name="ce" id="ce" type="text" class="form-control" placeholder="Data 15"</td>
+				</tr>
+               
+            </tbody>
+  
+  
+  
+</table>
+</div>
+
+	        <div class="col-xs-6 col-md-2">
+                <div class="form-group">
+                <label>Sun-hours (hours/day):</label>
+                <input class="form-control" name="sh" id="sh" type="text" class="form-control" placeholder="Sun-hours (hours/day)">	
+                </div>
+				
+			</div>
+			<div class="col-xs-6 col-md-22">
+                <div class="form-group">
+				<label>Inverter Efficiency:</label>
+                <input class="form-control" name="ie" id="ie" type="text" class="form-control" placeholder="Inverter Efficiency">
+                </div>
+			</div>
+               
+        
+</div>
+
+<!---------Container-1 Break--------->
+<div class="container-2">
+      <!--Table 2-->
+    <div class="col-xs-6 col-md-4">   
+        <table class="table table-bordered table-secondary" background-color:aqua;>
+		
+		
+		
+		  <thead class="thead">
+    <tr>
+      <th>For PV</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody class="tbody">
+    <tr>
+        <td>Power Output (W)</td>
+        
+        <td><input class="form-control" name="pvp" id="pvp" type="text" class="form-control" placeholder="Data 6"></td>
+    </tr>
+    <tr>
+      
+        <td>Vmpp (V)</td>
+        <td><input class="form-control" name="pv_vmp" id="pv_vmp" type="text" class="form-control" placeholder="Data 7"></td>
+    
+    </tr>
+    <tr>
+        <td>Impp (A)</td>
+        <td><input class="form-control" name="pv_imp" id="pv_imp" type="text" class="form-control" placeholder="Data 8"></td>
+    </tr>
+    <tr>
+        <td>Voc (V)</td>
+        <td><input class="form-control" name="pv_voc" id="pv_voc" type="text" class="form-control" placeholder="Data 9"></td>
+      </tr>
+      <tr>
+        <td>Isc (A)</td>
+        <td><input class="form-control" name="pv_isc" id="pv_isc" type="text" class="form-control" placeholder="Data 10"></td>
+      </tr>
+  </tbody>
+		
+           
+        </table>
+		        <table class="table table-bordered table-secondary" background-color:aqua;>
+            <thead class="thead">
+                <tr>
+                    <th>For Battery</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr>
+                    <td>Depth of Discharge (%)</td>
+        
+                    <td><input class="form-control" name="bat_dod" id="bat_dod" type="text" class="form-control" placeholder="Data 11"></td>
+                </tr>
+                <tr>
+      
+                    <td>Battery Voltage (V)</td>
+                    <td><input class="form-control" name="bat_v" id="bat_v" type="text" class="form-control" placeholder="Data 12"></td>
+    
+                </tr>
+                <tr>
+                    <td>Battery Capacity (Ah)</td>
+                    <td><input class="form-control" name="bat_cap" id="bat_cap" type="text" class="form-control" placeholder="Data 13"></td>
+                </tr>
+               
+            </tbody>
+        </table>
+      </div>
+
+        <div class="center">
+        <button class="btn custom-button pull-right" onclick="initialize();" style="margin-bottom: 10px;">Initialize</button>
+        </div>
+</div>
+<!---------Container-2 Break--------->
+    </div>
+    
+<!-----------------Conatiner for result------------------------------->
+<br></br>
+<div class="container">
+    <div class="page-header">
+		<div class="header-head">
+            <h3>PV System Outputs</h3>
+			<div class="help">
+				<img href="#" src="assets/images/help.png" onclick="document.getElementById('helpmeout').style.display='block'"></img>
+				<div class="info">
+					<img href="#" src="assets/images/info.png" onclick="document.getElementById('aboutus').style.display='block'"></img>
+				</div>
+			</div>
+		</div>
+        
+    </div>
+        <!----------Header break----------->
+    
+<div class="container-1">
+    <table class="table table-bordered" background-color:aqua;>
+        <thead class="thead">
+            <tr>
+                <th>For PV Module</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+            <tbody class="tbody">
+            <tr>
+                <td>Number in Series</td>
+        
+                <td><output class="form-control" name="ps" id="ps" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+      
+            <td>Number in Parallel</td>
+            <td><output class="form-control" name="pp" id="pp" type="text" class="form-control"></td>
+    
+            </tr>
+			
+			<tr>
+			
+				<td>Total Number of Panels</td>
+				<td><output class="form-control" name="pt" id="pt" type="text"></td>
+			</td>
+			
+            
+            </tbody>
+    </table>
+    
+    <table class="table table-bordered" background-color:aqua;>
+        <thead class="thead">
+            <tr>
+                <th>For Charge Controller</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+            <tbody class="tbody">
+            <tr>
+                <td>Vmax (V)</td>
+        
+                <td><output class="form-control" name="cc_vmaxout" id="cc_vmaxout" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+      
+            <td>Imax (A)</td>
+            <td><output class="form-control" name="cc_imaxout" id="cc_imaxout" type="text" class="form-control"></td>
+    
+            </tr>
+            <tr>
+                <td>Operational Voltage (V)</td>
+                <td><output class="form-control" name="cc_opt" id="cc_opt" type="text" class="form-control"></td>
+            </tr>
+            
+            </tbody>
+    </table>
+	
+
+
+
+                    </div>
+        <div class="container-2">
+            <div class="col-xs-6 col-md-4">
+			
+	<table class="table table-bordered" background-color:aqua;>
+        <thead class="thead">
+            <tr>
+                <th>For Battery</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr>
+                <td>Number in Series</td>
+        
+                <td><output class="form-control" name="bs" id="bs" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+      
+            <td>Number in Parallel</td>
+            <td><output class="form-control" name="bp" id="bp" type="text" class="form-control"></td>
+    
+            </tr>
+			
+			<tr>
+				<td>Total Number of Batteries</td>
+				<td><output class="form-control" name="bt" id="bt" type="text"></td>
+			</td>
+            
+        </tbody>
+    </table>
+	<table class="table table-bordered" background-color:aqua;>
+        <thead class="thead">
+            <tr>
+                <th>For Inverter</th>
+                <th>Results</th>
+            </tr>
+        </thead>
+            <tbody class="tbody">
+            <tr>
+                <td>Minimum Nominal Power Rating (W)</td>
+
+                <td><output class="form-control" name="nompow" id="nompow" type="text" class="form-control"></td>
+            </tr>
+            
+            </tbody>
+    </table>
+                    </div>
+        
+            <div class="col-xs-6 col-md-4">
+        <div id="aboutus" class="modal">
+        <span onclick="document.getElementById('aboutus').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content animate" style="background: transparent; width: 50%">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">About Us</h3>
+            </div>
+            <div class="panel-body">
+                <p>Proponents:</p>
+                <li>Daniel Cabrales</li>
+                <li>Drexanne Calibara</li>
+                <li>Emmanuel Justine Enrico</li>
+                <li>Agustine Christian Matawaran</li>
+                <li>Genesis Micaller</li>
+                <li>Rachel Monillo</li>
+                <li>Karl Ellois Ramirez</li>
+                <li>Mark Christian Sanidad</li>
+                <li>Cinderella Simbran</li>
+                <br></br>
+                <p>Adviser:</p>
+                <li>Engr. Lean Karlo S. Tolentino</li>
+                
+            </div>
+        </div>
+            </form>
+    </div>
+            
+            </div>
+
+                    </div>
+                    
+                    
+                    </div>
+                   
+                    
+                    
+                    </div>
+    </div>
+    </html>
+    
+    
+  
+    
+   
+<style>
+
+
+
+.header{
+    margin: 0px;
+    align-content: right;
+    }
+
+  
+
+.container-1{
+    width: 50%;
+   
+    float: left;
+    }
+
+.container-2{
+    width: 50%;
+    
+    float: left;
+    }
+    
+.col-l{
+    float: left;
+    width: 46%;
+    position: relative;
+    left: 52%;
+    overflow: hidden;
+    background-color: lightgray;
+    }
+
+.con-l{
+    display: block;
+    position: relative;
+    background-color: aliceblue;
+    margin: -20px 10px 0px 100px;
+    width: 80%;
+    }
+
+    .thead{
+        background-color: #d9edf7;
+        color: #31708f;
+        
+        
+        
+    }
+    .tbody{
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: aliceblue;
+    }
+
+    .col-xs-12{
+        width:100%;
+    } 
+    .col-md-8{
+        width: 100%;
+    }
+    .col-xs-6{
+        width: 100%;
+    } 
+    .col-md-4{
+        width: 100%;
+    }
+	
+	.col-md-2{
+		width: 40%;
+	}
+	
+	.col-md-22{
+		width: 40%;
+		float: right;
+	}
+	
+    img{
+        max-width: 40%;
+    }
+   label{
+        font-size: 14px;
+        color: aliceblue;
+        font-weight: 600;
+    }
+    .center{
+        align-content: center;
+        -webkit-align-content: center;
+    }
+    h{
+        color: aliceblue;
+    }
+    .container{
+        width: 1040px;
+        height: 780px;
+        background-image: url(assets/images/techie.png);
+        font-family: 'Helvetica', serif;
+        }
+.custom-button{
+        width: 300px;
+        height: 50px;
+        padding: 1px 10px;
+        
+        font-weight: 550;
+        font-size: 18px;
+        color: white;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+        background: lightcoral;
+        /* border: 1px solid #46b3d3; */
+        border-radius: 5px;
+        cursor: pointer;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonface;
+        border-image: initial;
+        }
+    href{
+        cursor: pointer;
+    }
+button {
+    background-color: darkturquoise;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: lightcoral;
+}
+.submitbtn {
+    padding: 14px 20px;
+    background-color: mediumseagreen;
+}
+.addbtn {
+    background-color: #31708f;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.submitbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container_m {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+
+
+h3 {
+	color: white;
+
+}
+
+
+.header-head {
+	align-content: left;
+	width: 100%;
+	position:relative;
+	
+}
+
+.help {
+	position: absolute;
+	width: 10%;
+	height: 10%;
+	align-content: right;
+	cursor: pointer;
+	top: 0px;
+	right:0px;
+}
+
+.info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	align-content: right;
+	cursor: pointer;
+	top: 0px;
+	right:-50px;
+</style>
+

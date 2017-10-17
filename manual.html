@@ -1,0 +1,68 @@
+<html>
+<head>
+</head>
+
+<body>
+<h2>INPUT GUIDE</h2>
+<p> NOTE: ALL INPUT FIELDS MUST BE FILLED</p>
+<p> The application will estimate the sizing of a specific PV and Batteries<br>
+and the minimum specifications for inverter and charge controller<br>
+necessary to satisfy the load demand given the solar irradiation<br>
+and days of autonomy of the system<br>
+
+<h3>For Load Demand</h3>
+<p>
+The user may directly input the total load parameters<br>
+or may input the appliances one by one, to do the latter<br>
+press <b>Add Appliances and Ratings</b>.
+</p>
+
+<h3>For Charge Controller</h3>
+<p>
+The user must input operating voltage of the PV system, this is <br>
+usually 12 V or 24 V. For Efficiency, it accounts the losses on <br>
+the battery, cables and the charge controller itself. Its value <br>
+ranges from 70% to 90%, but typically 85% (0.85) <br>
+</p>
+
+
+<h3>Sun Hours</h3>
+<p>
+The sun-hours can be determined with an insolation map.<br>
+<img  class="map" src="assets/images/solar-insolation-map.jpg"></img>
+</p>
+
+<h3>Inverter</h3>
+<p>
+The inverter specifications assumes to be compliant<br>
+with the operating voltage. For efficiency, it can be<br>
+set to 0.9.
+</p>
+
+<h3>For PV and Batteries</h3>
+<p>
+Please refer to the datasheet.
+</p>
+
+<p>
+Once the parameters are set, press <b>Initialize</b> to calculate<br>
+the PV system sizing parameters and specifications that will be shown below.
+</p>
+
+
+
+</body>
+</html>
+
+
+<style>
+body {
+	font-family : "Arial";
+}
+
+.map {
+	width: 80%;
+}
+
+
+</style>
